@@ -7,7 +7,7 @@ const verify = async (user)=>{
 
     try{
         const userFromFile = JSON.parse(await readFile(fileName))
-        if(user.name === userFromFile.name ||  md5(user.password) === userFromFile.password ){
+        if(user.name === userFromFile.name  &&  md5(user.password) === userFromFile.password ){
             console.log(`the user is same life in the file`)
         }
         else{
